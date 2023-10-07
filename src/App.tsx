@@ -22,15 +22,11 @@ function App() {
     },
   ];
 
-  const onSubmit = (password: string) => {
-    console.log(password);
-  };
-
   return (
     <form>
       <h1>Sign Up</h1>
       <input placeholder="email" type="email" />
-      <PasswordValidator config={configs} onSubmit={onSubmit} />
+      <PasswordValidator config={configs} />
     </form>
   );
 }
