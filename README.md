@@ -23,7 +23,8 @@ There're some technical decisions that are worth to be explained, it will be acc
  #### Performance and structure
  The core functionality of the component, which is the password validation, is isolated into a separate custom hook for both performance and test purposes. Having this business logic separate from the component allows us to set a good amount of test cases without an excess of lines of code at the PasswordValidator.test.tsx. In addition to that, setting a function outside the functional component prevents the function to be executed on every component mount. 
 	 I chose to set a throttle functionality to its business logic due to the performance issues that iterating the `config` prop throught every letter typing of the input. Since it's necessary to compare the current input value with the conditions passed throught props.
-	The `useValidation` hook makes use of `useMemo` react hook to cache its value and prevent it to update on every rerender, it just updates itself when it's dependencies are changed.
+	
+ The `useValidation` hook makes use of `useMemo` react hook to cache its value and prevent it to update on every rerender, it just updates itself when it's dependencies are changed.
 	These choices were made to have the best performance and a declarative and readable code. It's recommended to use profiler from react dev tools extention to perceive that only the validation lines to be changed are rerendered.
 
 #### Layout
