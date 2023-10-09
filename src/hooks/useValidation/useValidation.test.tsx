@@ -5,10 +5,8 @@ import useValidation, {
   ValidationCallback,
 } from "./useValidation";
 
-// Mock the ValidationCallback
 const mockCallback: ValidationCallback = jest.fn();
 
-// Helper function to render a test component using the hook
 const renderTestComponent = (pass: string, cfg: ValidationConfig[]) => {
   const TestComponent: React.FC = () => {
     useValidation(pass, cfg, mockCallback);

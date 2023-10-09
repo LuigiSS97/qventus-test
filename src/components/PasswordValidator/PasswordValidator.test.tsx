@@ -3,7 +3,6 @@ import PasswordValidator from "./PasswordValidator.tsx";
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-// Mock the react-icons library to avoid errors
 jest.mock("react-icons/pi", () => {
   return {
     PiCheckFatFill: jest.fn(() => <span>MockIcon</span>),

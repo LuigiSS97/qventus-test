@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, memo } from "react";
 import { PasswordValidatorProps } from "./PasswordValidator.types";
 import { PiCheckFatFill } from "react-icons/pi";
 import styles from "./PasswordValidator.module.scss";
@@ -70,4 +70,4 @@ function PasswordValidator({ config = [] }: PasswordValidatorProps) {
   );
 }
 
-export default PasswordValidator;
+export default memo(PasswordValidator);

@@ -15,7 +15,7 @@ function App() {
     },
     {
       validation: /[A-Z]/,
-      description: "has at least pne uppercase letter",
+      description: "has at least one uppercase letter",
     },
     {
       validation: /^(?:(?![A-Za-z]{2}).)*$/,
