@@ -11,7 +11,7 @@ To run the project on your local machine follow the steps:
 
 3- If the dependency installation succeded, please run a `npm run dev` to run the project locally and go to the url address http://127.0.0.1:5173 in your prefered browser.
 
- ##### To run the tests, run `npm test` in the project's root folder.
+ ##### To run the tests, run the `npm test` command in the project's root folder.
 
 ### Technical notes
 There're some technical decisions that are worth to be explained, it will be accomplished by the following topics aiming to clarify some points of attention: 
