@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import PasswordValidator from "./components/PasswordValidator/PasswordValidator";
 import { Configs } from "./components/PasswordValidator/PasswordValidator.types";
@@ -24,8 +25,7 @@ function App() {
 
   return (
     <form>
-      <h1>Sign Up</h1>
-      <input placeholder="email" type="email" />
+      <h1>Password component</h1>
       <PasswordValidator config={configs} />
     </form>
   );
