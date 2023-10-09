@@ -1,6 +1,6 @@
 import React from "react";
 import PasswordValidator from "./PasswordValidator.tsx";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 // Mock the react-icons library to avoid errors
@@ -37,7 +37,9 @@ describe("PasswordValidator Component", () => {
 
     fireEvent.change(passwordInput, { target: { value: "Type@1" } });
 
-    await new Promise((resolve) => setTimeout(resolve, 400));
+    act(() => {
+      jest.advanceTimersByTime(300);
+    });
 
     const validatedConfig = require("react-icons/pi");
 
@@ -51,7 +53,9 @@ describe("PasswordValidator Component", () => {
 
     fireEvent.change(passwordInput, { target: { value: "a" } });
 
-    await new Promise((resolve) => setTimeout(resolve, 400));
+    act(() => {
+      jest.advanceTimersByTime(300);
+    });
 
     const validatedConfig = require("react-icons/pi");
 
