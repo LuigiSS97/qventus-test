@@ -33,5 +33,6 @@ The test was made with SASS at mobile first principle. It's currently fully resp
 It's completely possible to expand the component to embrace other functionalities and not being just for pasword validation but a specific form that might be necessary to be repeated in the project. The current project is already adaptable to validate not just passwords, since it accepts any validation function. It would only be necessary to change it's markup and style to fit new business rules.
 The throttle was supposed to be just a suggestion but it seems appropriate on a performance point of view to prioritize its implementation and show some lifecycle and perfomance enhancement techniques, since it would have a big performance cost to verify  the conditions with all letter typing in the input. 
 
+### Thank you for the opportunity and I'm hoping we can discuss more on the next stage of the hiring process :D
 	
 
