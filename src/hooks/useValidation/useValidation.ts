@@ -12,7 +12,7 @@ export type ValidationConfig = {
   description: string;
 };
 
-export const useValidation = (
+const useValidation = (
   pass: string,
   cfg: ValidationConfig[],
   callback: ValidationCallback
@@ -24,3 +24,5 @@ export const useValidation = (
   });
   callback(validations);
 };
+
+export default useValidation;

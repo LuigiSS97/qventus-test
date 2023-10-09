@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-export const useThrottle = <T extends any[]>(
+const useThrottle = <T extends any[]>(
   callback: (...args: T) => void,
   delay: number
 ) => {
@@ -16,3 +16,5 @@ export const useThrottle = <T extends any[]>(
     };
   }, [callback, delay]);
 };
+
+export default useThrottle;

@@ -2,8 +2,8 @@ import React, { useCallback, useState } from "react";
 import { PasswordValidatorProps } from "./PasswordValidator.types";
 import { PiCheckFatFill } from "react-icons/pi";
 import styles from "./PasswordValidator.module.scss";
-import { useThrottle } from "../../hooks/useDebounce/useDebounce";
-import { useValidation } from "../../hooks/useValidate/useValidate";
+import useThrottle from "../../hooks/useThrottle/useThrottle";
+import useValidation from "../../hooks/useValidation/useValidation";
 
 const {
   validatorWrapper,
@@ -26,8 +26,6 @@ function PasswordValidator({ config = [] }: PasswordValidatorProps) {
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log("event.target.value");
-
       setPassword(event.target.value);
 
       handleInputChangeThrottled(event.target.value);
