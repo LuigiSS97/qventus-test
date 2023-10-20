@@ -1,5 +1,5 @@
 import { act, renderHook } from "@testing-library/react-hooks";
-import useDebouncedCallback from "./useDebounce"; // Import your custom hook
+import useDebouncedCallback from "./useDebounce";
 
 describe("useDebouncedCallback", () => {
   beforeEach(() => {
