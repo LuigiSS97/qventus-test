@@ -41,7 +41,7 @@ function PasswordValidator({ config = [] }: PasswordValidatorProps) {
         className={input}
         placeholder="password"
         title="Type your password"
-        type="password"
+        // type="password"
       />
       <div className={descriptionWrapper}>
         {validation.map(({ isValid, description }) => (
@@ -70,4 +70,4 @@ function PasswordValidator({ config = [] }: PasswordValidatorProps) {
   );
 }
 
-export default memo(PasswordValidator);
+export default PasswordValidator;
