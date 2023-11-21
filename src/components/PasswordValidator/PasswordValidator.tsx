@@ -2,8 +2,8 @@ import React, { useCallback, useState, memo } from "react";
 import { PasswordValidatorProps } from "./PasswordValidator.types";
 import { PiCheckFatFill } from "react-icons/pi";
 import styles from "./PasswordValidator.module.scss";
-import useThrottle from "../../hooks/useThrottle/useThrottle";
 import useValidation from "../../hooks/useValidation/useValidation";
+import useDebouncedCallback from "../../hooks/useDebounce/useDebounce";
 
 const {
   validatorWrapper,
@@ -20,17 +20,17 @@ function PasswordValidator({ config = [] }: PasswordValidatorProps) {
     { isValid: boolean; description: string }[] | []
   >([]);
 
-  const handleInputChangeThrottled = useThrottle((value) => {
+  const debouncedCallback = useDebouncedCallback((value: string) => {
     useValidation(value, config, setValidation);
-  }, 300);
+  }, 500);
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setPassword(event.target.value);
 
-      handleInputChangeThrottled(event.target.value);
+      debouncedCallback(event.target.value);
     },
-    [handleInputChangeThrottled]
+    [debouncedCallback]
   );
 
   return (
@@ -41,7 +41,7 @@ function PasswordValidator({ config = [] }: PasswordValidatorProps) {
         className={input}
         placeholder="password"
         title="Type your password"
-        type="password"
+        // type="password"
       />
       <div className={descriptionWrapper}>
         {validation.map(({ isValid, description }) => (
@@ -70,4 +70,4 @@ function PasswordValidator({ config = [] }: PasswordValidatorProps) {
   );
 }
 
-export default memo(PasswordValidator);
+export default PasswordValidator;

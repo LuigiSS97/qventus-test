@@ -17,6 +17,8 @@ const useValidation = (
   cfg: ValidationConfig[],
   callback: ValidationCallback
 ): void => {
+  console.log("useValidation");
+
   const validations: Validation[] = cfg.map(({ validation, description }) => {
     const isValid =
       validation instanceof RegExp ? validation.test(pass) : validation(pass);
